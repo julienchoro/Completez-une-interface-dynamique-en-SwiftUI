@@ -27,7 +27,8 @@ struct MenuView: View {
                             DishView(imageName: item.imageName,
                                      name: item.name,
                                      description: item.description,
-                                     price: item.price)
+                                     price: item.price,
+                                     spiceLevel: item.spiceLevel)
                         }
                         
                     }
@@ -50,7 +51,8 @@ struct MenuView: View {
                             DishView(imageName: item.imageName,
                                      name: item.name,
                                      description: item.description,
-                                     price: item.price)
+                                     price: item.price,
+                                     spiceLevel: item.spiceLevel)
 
                         }
                     }
@@ -81,6 +83,7 @@ struct DishView: View {
     let name: String
     let description: String
     let price: Double
+    let spiceLevel: SpiceLevel
     
     var body: some View {
         
@@ -115,18 +118,40 @@ struct DishView: View {
                             .foregroundStyle(.customGrey)
                         Spacer()
                         HStack {
-                            Image("redSpice")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:10)
-                            Image("redSpice")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:10)
-                            Image("greySpice")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:10)
+                            if spiceLevel == .light {
+                                Image("redSpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            } else {
+                                Image("greySpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            }
+                            if spiceLevel == .medium {
+                                Image("redSpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            } else {
+                                Image("greySpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            }
+                            if spiceLevel == .hot {
+                                Image("redSpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            } else {
+                                Image("greySpice")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:10)
+                            }
+
 
                         }
                     }
