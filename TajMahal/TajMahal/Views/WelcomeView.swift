@@ -18,15 +18,17 @@ struct WelcomeView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Restaurant Indien")
+                        .foregroundStyle(.customGrey)
                         .font(.headline)
                     Text("Taj Mahal")
+                        .foregroundStyle(.customBlack)
                         .font(.title)
                 }
                 Spacer()
                 Image("Logo")
                     .resizable()
                     .frame(width: 40, height: 40)
-                    .colorMultiply(.gray)
+                    .colorMultiply(.customGrey)
             }
             .padding()
             
@@ -35,9 +37,13 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 12, height: 12)
+                    .tint(.customGrey)
                 Text("Mardi")
+                    .foregroundStyle(.customGrey)
                 Spacer()
                 Text("11h30 - 14h30 • 18h30 - 22h00")
+                    .foregroundStyle(.customGrey)
+
             }
             .padding()
             
@@ -46,9 +52,15 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 14, height: 12)
+                    .tint(.customGrey)
+
                 Text("Type de Service")
+                    .foregroundStyle(.customGrey)
+
                 Spacer()
                 Text("À emporter")
+                    .foregroundStyle(.customGrey)
+
             }
             .padding()
             
@@ -57,7 +69,11 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 11, height: 13)
+                    .tint(.customGrey)
+
                 Text("12 Avenue de la Brique - 75010 Paris")
+                    .foregroundStyle(.customGrey)
+
                 Spacer()
             }
             .padding()
@@ -67,7 +83,11 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 12, height: 12)
+                    .tint(.customGrey)
+
                 Text("www.tajmahal.fr")
+                    .foregroundStyle(.customGrey)
+
                 Spacer()
             }
             .padding()
@@ -77,7 +97,11 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 12, height: 12)
+                    .tint(.customGrey)
+
                 Text("06 12 34 56 78")
+                    .foregroundStyle(.customGrey)
+
                 Spacer()
             }
             .padding()
