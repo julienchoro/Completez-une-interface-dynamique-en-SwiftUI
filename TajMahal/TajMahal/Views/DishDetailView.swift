@@ -12,7 +12,14 @@ struct DishDetailView: View {
     var name: String
 
     var body: some View {
-        Text(name)
+        
+        NavigationStack {
+            Text(name)
+            
+                .navigationTitle(name)
+        }
+        .navigationBarBackButtonHidden(false)
+
     }
 }
 
