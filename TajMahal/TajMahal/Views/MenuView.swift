@@ -17,13 +17,18 @@ struct MenuView: View {
             
             
             List {
-
+                
                 Section() {
                     
                     ForEach(viewModel.apetizerArray) { item in
-                        DishView(imageName: item.imageName,
-                                 name: item.name,
-                                 description: item.description)
+                        
+                        NavigationLink(destination: DishDetailView(name: item.name)) {
+                            
+                            DishView(imageName: item.imageName,
+                                     name: item.name,
+                                     description: item.description)
+                        }
+                        
                     }
                     
                 } header: {
@@ -31,16 +36,20 @@ struct MenuView: View {
                         .font(Font.custom("PlusJakartaSans-Bold", size: 14))
                         .foregroundStyle(.customGrey)
                 }
-                    .textCase(.none)
-                    
+                .textCase(.none)
+                
                 
                 
                 Section() {
                     
                     ForEach(viewModel.mainCourseArray) { item in
-                        DishView(imageName: item.imageName,
-                                 name: item.name,
-                                 description: item.description)
+                        
+                        NavigationLink(destination: DishDetailView(name: item.name)) {
+                            
+                            DishView(imageName: item.imageName,
+                                     name: item.name,
+                                     description: item.description)
+                        }
                     }
                     
                 } header: {
@@ -55,7 +64,7 @@ struct MenuView: View {
             }
             .navigationTitle("Menu")
             .listRowSpacing(12)
-
+            
             
             
         }
