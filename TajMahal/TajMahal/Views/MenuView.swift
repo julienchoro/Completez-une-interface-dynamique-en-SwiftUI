@@ -117,26 +117,35 @@ struct DishView: View {
                             .font(.custom("PlusJakartaSans-Regular", size: 12))
                             .foregroundStyle(.customGrey)
                         Spacer()
-                        HStack {
-                            ForEach(0..<3) { i in
-                                if spiceLevel.rawValue > i {
-                                    Image("redSpice")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 14)
-                                } else {
-                                    Image("greySpice")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 14)
-                                }
-                            }
-                        }
+
+                        SpiceView(spiceLevel: spiceLevel)
                     }
                 }
             }
         }
         .frame(width: 335, height: 82)
+    }
+}
+
+struct SpiceView: View {
+    let spiceLevel: SpiceLevel
+    
+    var body: some View {
+        HStack {
+            ForEach(0..<3) { i in
+                if spiceLevel.rawValue > i {
+                    Image("redSpice")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 14)
+                } else {
+                    Image("greySpice")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 14)
+                }
+            }
+        }
     }
 }
 

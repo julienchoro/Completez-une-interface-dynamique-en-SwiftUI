@@ -16,11 +16,13 @@ struct DishDetailView: View {
             List {
                 Group {
                     VStack(alignment: .leading) {
-                        Image(dish.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .cornerRadius(14)
-                            .padding()
+                        ZStack {
+                            Image(dish.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(14)
+                                .padding()
+                        }
                         
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Allergènes:")
