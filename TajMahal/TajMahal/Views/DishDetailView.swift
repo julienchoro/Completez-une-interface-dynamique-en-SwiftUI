@@ -8,18 +8,33 @@
 import SwiftUI
 
 struct DishDetailView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     
     var name: String
-
+    
     var body: some View {
         
         NavigationStack {
             Text(name)
             
-                .navigationTitle(name)
         }
-        .navigationBarBackButtonHidden(false)
-
+        .navigationBarBackButtonHidden(true)
+        
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text(name)
+                            .font(Font.custom("PlusJakartaSans-Bold", size: 18))
+                    }
+                    .foregroundStyle(.customBlack)
+                }
+            }
+        }
     }
 }
 
