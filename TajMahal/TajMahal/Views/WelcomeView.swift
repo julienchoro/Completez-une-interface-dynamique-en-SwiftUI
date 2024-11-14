@@ -9,6 +9,17 @@ import SwiftUI
 
 // Page d'accueil
 struct WelcomeView: View {
+    
+//    private var test = {
+//        for family in UIFont.familyNames {
+//                 print(family)
+//                 for names in UIFont.fontNames(forFamilyName: family){
+//                 print("== \(names)")
+//                 }
+//            }
+//        return "test"
+//    }
+//    
     var body: some View {
         
         NavigationStack {
@@ -26,11 +37,11 @@ struct WelcomeView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Restaurant Indien")
-                            .font(Font.custom("PlusJakartaSans-Regular.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-Regular", size: 12))
                             .foregroundStyle(.customGrey)
                         Spacer()
                         Text("Taj Mahal")
-                            .font(Font.custom("PlusJakartaSans-Bold.ttf", size: 18))
+                            .font(Font.custom("PlusJakartaSans-Bold", size: 18))
                             .foregroundStyle(.customBlack)
                             .font(.title)
                     }
@@ -52,10 +63,10 @@ struct WelcomeView: View {
                             .frame(width: 12, height: 12)
                             .tint(.customGrey)
                         Text("Mardi")
-                            .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         Spacer()
-                        Text("11h30 - 14h30 • 18h30 - 22h00")                    .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                        Text("11h30 - 14h30 • 18h30 - 22h00")                    .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                     }
@@ -67,12 +78,12 @@ struct WelcomeView: View {
                             .frame(width: 14, height: 12)
                             .tint(.customGrey)
                         
-                        Text("Type de Service")                    .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                        Text("Type de Service")                    .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                         Spacer()
                         Text("À emporter")
-                            .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                     }
@@ -85,7 +96,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text("12 Avenue de la Brique - 75010 Paris")
-                            .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                         Spacer()
@@ -99,7 +110,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text(verbatim:"www.tajmahal.fr")
-                            .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                         Spacer()
@@ -113,7 +124,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text("06 12 34 56 78")
-                            .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
                             .foregroundStyle(.customGrey)
                         
                         Spacer()
@@ -128,7 +139,7 @@ struct WelcomeView: View {
                     MenuView()
                 } label : {
                     Text("Acceder au menu")
-                        .font(Font.custom("PlusJakartaSans-Bold.ttf", size: 16))
+                        .font(Font.custom("PlusJakartaSans-Bold", size: 16))
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding()
