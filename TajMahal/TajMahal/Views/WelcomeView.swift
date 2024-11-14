@@ -87,7 +87,7 @@ struct WelcomeView: View {
                         .frame(width: 12, height: 12)
                         .tint(.customGrey)
                     
-                    Text("www.tajmahal.fr")
+                    Text(verbatim:"www.tajmahal.fr")
                         .font(Font.custom("PlusJakartaSans-SemiBold.ttf", size: 12))
                         .foregroundStyle(.customGrey)
                     
