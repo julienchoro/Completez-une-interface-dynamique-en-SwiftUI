@@ -20,36 +20,9 @@ struct MenuView: View {
                 
                 Section() {
                     
-                    ZStack {
-                        HStack {
-                            
-                            Image(viewModel.apetizerArray[0].imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 112, height: 86)
-                                .cornerRadius(8)
-                                .clipped()
-                            
-                            Spacer()
-                            
-                            VStack (alignment: .leading) {
-                                Text(viewModel.apetizerArray[0].name)
-                                    .font(.custom("PlusJakartaSans-Semibold", size: 14))
-                                    .foregroundStyle(.customGrey)
-                                
-                                Spacer()
-                                
-                                Text(viewModel.apetizerArray[0].description)
-                                    .font(.custom("PlusJakartaSans-Regular", size: 12))
-                                    .foregroundStyle(.customGrey)
-                                
-                                Spacer()
-                                
-                            }
-                        }
-                    }
-                    .frame(width: 335, height: 82)
-                    
+                    DishView(imageName: viewModel.apetizerArray[0].imageName,
+                             name: viewModel.apetizerArray[0].name,
+                             description: viewModel.apetizerArray[0].description)
                     
                 } header: {
                     Text("Entrées")
@@ -77,6 +50,46 @@ struct MenuView: View {
             
         }
         .navigationBarBackButtonHidden(false)
+    }
+}
+
+struct DishView: View {
+    
+    let imageName: String
+    let name: String
+    let description: String
+    
+    var body: some View {
+        
+        ZStack {
+            HStack {
+                
+                Image(imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 112, height: 86)
+                    .cornerRadius(8)
+                    .clipped()
+                
+                Spacer()
+                
+                VStack (alignment: .leading) {
+                    Text(name)
+                        .font(.custom("PlusJakartaSans-Semibold", size: 14))
+                        .foregroundStyle(.customGrey)
+                    
+                    Spacer()
+                    
+                    Text(description)
+                        .font(.custom("PlusJakartaSans-Regular", size: 12))
+                        .foregroundStyle(.customGrey)
+                    
+                    Spacer()
+                    
+                }
+            }
+        }
+        .frame(width: 335, height: 82)
     }
 }
 
