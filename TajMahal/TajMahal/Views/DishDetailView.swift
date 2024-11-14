@@ -16,12 +16,21 @@ struct DishDetailView: View {
             List {
                 Group {
                     VStack(alignment: .leading) {
-                        ZStack {
+                        ZStack (alignment: .topTrailing) {
                             Image(dish.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(14)
                                 .padding()
+                            SpiceView(spiceLevel: dish.spiceLevel)
+//                                .alignmentGuide(VerticalAlignment.top) { _ in -5}
+//                                .alignmentGuide(HorizontalAlignment.trailing) { _ in -5}
+                                .padding(6)
+                                .background(Color.white)
+                                .cornerRadius(12)
+//                                .offset(x: 100, y: -50)
+                                .padding(30)
+                        
                         }
                         
                         VStack(alignment: .leading, spacing: 10) {
