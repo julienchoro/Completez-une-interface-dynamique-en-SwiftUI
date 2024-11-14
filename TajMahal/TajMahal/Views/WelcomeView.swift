@@ -12,6 +12,9 @@ struct WelcomeView: View {
     var body: some View {
         NavigationStack {
             Image("TajMahal")
+                .resizable()
+                .scaledToFit()
+                .padding()
             Spacer()
             NavigationLink {
                 MenuView()
