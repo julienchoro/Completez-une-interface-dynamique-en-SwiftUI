@@ -22,7 +22,7 @@ struct MenuView: View {
                     
                     ForEach(viewModel.apetizerArray) { item in
                         
-                        NavigationLink(destination: DishDetailView(name: item.name)) {
+                        NavigationLink(destination: DishDetailView(dish: item)) {
                             
                             DishView(imageName: item.imageName,
                                      name: item.name,
@@ -44,7 +44,7 @@ struct MenuView: View {
                     
                     ForEach(viewModel.mainCourseArray) { item in
                         
-                        NavigationLink(destination: DishDetailView(name: item.name)) {
+                        NavigationLink(destination: DishDetailView(dish: item)) {
                             
                             DishView(imageName: item.imageName,
                                      name: item.name,

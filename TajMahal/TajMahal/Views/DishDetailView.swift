@@ -9,18 +9,51 @@ import SwiftUI
 
 struct DishDetailView: View {
     @Environment(\.dismiss) private var dismiss
-    
-    
-    var name: String
+    var dish: Dish
     
     var body: some View {
-        
         NavigationStack {
-            Text(name)
+            List {
+                Group {
+                    VStack(alignment: .leading) {
+                        Image(dish.imageName)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .cornerRadius(14)
+                            .padding()
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Allergènes:")
+                                .font(Font.custom("PlusJakartaSans-SemiBold", size: 14))
+                                .foregroundStyle(.customGrey)
+                            
+                            Text(dish.ingredients)
+                                .font(Font.custom("PlusJakartaSans-Regular", size: 14))
+                                .foregroundColor(.customGrey)
+                        }
+                        .padding()
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Ingrédients:")
+                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 14))
+                            .foregroundStyle(.customGrey)
+                        
+                        Text(dish.allergens)
+                            .font(Font.custom("PlusJakartaSans-Regular", size: 14))
+                            .foregroundColor(.customGrey)
+                    }
+                    .padding()
+                }
+                .listRowInsets(EdgeInsets())
+
+            }
+            .frame(width: .infinity)
+            .listStyle(.plain)
+
             
         }
         .navigationBarBackButtonHidden(true)
-        
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
@@ -28,7 +61,7 @@ struct DishDetailView: View {
                 } label: {
                     HStack {
                         Image(systemName: "chevron.left")
-                        Text(name)
+                        Text(dish.name)
                             .font(Font.custom("PlusJakartaSans-Bold", size: 18))
                     }
                     .foregroundStyle(.customBlack)
@@ -39,5 +72,5 @@ struct DishDetailView: View {
 }
 
 #Preview {
-    DishDetailView(name: "test")
+    DishDetailView(dish: ViewModel().apetizerArray[2])
 }
