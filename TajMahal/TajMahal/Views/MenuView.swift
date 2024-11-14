@@ -9,6 +9,8 @@ import SwiftUI
 
 // Menu sous forme de liste
 struct MenuView: View {
+    @Environment(\.dismiss) private var dismiss
+
     // Référence vers le view model qui permet d'accéder aux tableaux d'entrées et de plats du menu
     let viewModel: ViewModel = ViewModel()
     
@@ -67,13 +69,30 @@ struct MenuView: View {
                 
                     .listRowSeparator(.hidden)
             }
-            .navigationTitle("Menu")
             .listRowSpacing(12)
             
             
             
         }
-        .navigationBarBackButtonHidden(false)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+//                        Text("Menu")
+                            .font(Font.custom("PlusJakartaSans-Bold", size: 18))
+                    }
+                    .foregroundStyle(.customBlack)
+                }
+            }
+            
+            ToolbarItem(placement: .principal) {
+                Text("Menu")
+            }
+        }
     }
 }
 
