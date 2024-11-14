@@ -109,15 +109,35 @@ struct DishView: View {
                     
                     Spacer()
                     
-                    Text((String(format: "%.2f €", price)))
-                        .font(.custom("PlusJakartaSans-Regular", size: 12))
-                        .foregroundStyle(.customGrey)
+                    HStack {
+                        Text((String(format: "%.2f €", price)))
+                            .font(.custom("PlusJakartaSans-Regular", size: 12))
+                            .foregroundStyle(.customGrey)
+                        Spacer()
+                        HStack {
+                            Image("redSpice")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:10)
+                            Image("redSpice")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:10)
+                            Image("greySpice")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width:10)
+
+                        }
+                    }
                 }
             }
         }
         .frame(width: 335, height: 82)
     }
 }
+
+
 
 #Preview {
     MenuView()
