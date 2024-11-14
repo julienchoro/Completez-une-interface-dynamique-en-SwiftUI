@@ -15,11 +15,35 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             
+            
             List {
                 
+                Section() {
+                    
+                    
+                } header: {
+                    Text("Entrées")
+                        .font(Font.custom("PlusJakartaSans-Bold", size: 14))
+                        .foregroundStyle(.customGrey)
+                } .textCase(.none)
                 
+                
+                Section() {
+                    
+                    
+                } header: {
+                    Text("Plats Principaux")
+                        .font(Font.custom("PlusJakartaSans-Bold", size: 14))
+                        .foregroundStyle(.customGrey)
+                } .textCase(.none)
+                
+                
+                
+                
+                .listRowSeparator(.hidden)
             }
             .navigationTitle("Menu")
+            
             
         }
         .navigationBarBackButtonHidden(false)
