@@ -13,9 +13,16 @@ struct MenuView: View {
     let viewModel: ViewModel = ViewModel()
     
     var body: some View {
-        List {
-            // À completer
+        NavigationStack {
+            
+            List {
+                
+                
+            }
+            .navigationTitle("Menu")
+            
         }
+        .navigationBarBackButtonHidden(false)
     }
 }
 
