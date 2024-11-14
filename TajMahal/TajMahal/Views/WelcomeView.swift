@@ -13,13 +13,16 @@ struct WelcomeView: View {
         NavigationStack {
             Image("TajMahal")
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 335)
+                .scaledToFill()
                 .padding()
             HStack {
                 VStack(alignment: .leading) {
                     Text("Restaurant Indien")
                         .font(Font.custom("PlusJakartaSans-Regular.ttf", size: 12))
                         .foregroundStyle(.customGrey)
+                    Spacer()
                     Text("Taj Mahal")
                         .font(Font.custom("PlusJakartaSans-Bold.ttf", size: 18))
                         .foregroundStyle(.customBlack)
@@ -31,6 +34,7 @@ struct WelcomeView: View {
                     .frame(width: 40, height: 40)
                     .colorMultiply(.customGrey)
             }
+            .frame(height: 40)
             .padding()
             
             VStack(spacing: 10) {
@@ -114,8 +118,17 @@ struct WelcomeView: View {
             NavigationLink {
                 MenuView()
             } label : {
-                Text("Menu")
+                Text("Acceder au menu")
+                    .font(Font.custom("PlusJakartaSans-Bold.ttf", size: 16))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(.customRed)
+                    .cornerRadius(10)
+                    .padding()
             }
+            .buttonStyle(.plain)
         }
     }
 }
