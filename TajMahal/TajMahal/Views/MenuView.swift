@@ -118,41 +118,19 @@ struct DishView: View {
                             .foregroundStyle(.customGrey)
                         Spacer()
                         HStack {
-                            if spiceLevel == .light {
-                                Image("redSpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
-                            } else {
-                                Image("greySpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
+                            ForEach(0..<3) { i in
+                                if spiceLevel.rawValue > i {
+                                    Image("redSpice")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 14)
+                                } else {
+                                    Image("greySpice")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 14)
+                                }
                             }
-                            if spiceLevel == .medium {
-                                Image("redSpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
-                            } else {
-                                Image("greySpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
-                            }
-                            if spiceLevel == .hot {
-                                Image("redSpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
-                            } else {
-                                Image("greySpice")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width:10)
-                            }
-
-
                         }
                     }
                 }
