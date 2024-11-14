@@ -26,7 +26,8 @@ struct MenuView: View {
                             
                             DishView(imageName: item.imageName,
                                      name: item.name,
-                                     description: item.description)
+                                     description: item.description,
+                                     price: item.price)
                         }
                         
                     }
@@ -48,7 +49,9 @@ struct MenuView: View {
                             
                             DishView(imageName: item.imageName,
                                      name: item.name,
-                                     description: item.description)
+                                     description: item.description,
+                                     price: item.price)
+
                         }
                     }
                     
@@ -77,6 +80,7 @@ struct DishView: View {
     let imageName: String
     let name: String
     let description: String
+    let price: Double
     
     var body: some View {
         
@@ -105,6 +109,9 @@ struct DishView: View {
                     
                     Spacer()
                     
+                    Text((String(format: "%.2f €", price)))
+                        .font(.custom("PlusJakartaSans-Regular", size: 12))
+                        .foregroundStyle(.customGrey)
                 }
             }
         }
