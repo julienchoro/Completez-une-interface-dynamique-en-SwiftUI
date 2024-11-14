@@ -13,12 +13,16 @@ struct WelcomeView: View {
         
         NavigationStack {
             ScrollView {
+                
+//MARK: Picture of the view
                 Image("TajMahal")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 335)
                     .scaledToFill()
                     .padding()
+                
+//MARK: Name and logo
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Restaurant Indien")
@@ -39,6 +43,7 @@ struct WelcomeView: View {
                 .frame(height: 40)
                 .padding()
                 
+//MARK: Informations
                 VStack(spacing: 10) {
                     HStack {
                         Image("Horaire")
@@ -117,6 +122,8 @@ struct WelcomeView: View {
                 .padding()
                 
                 Spacer()
+                
+//MARK: Navigation link button
                 NavigationLink {
                     MenuView()
                 } label : {
