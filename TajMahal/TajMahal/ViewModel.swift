@@ -21,7 +21,8 @@ struct ViewModel {
              spiceLevel: .light,
              imageName: "Samosas"),
         Dish(name: "Pakoras",
-             description: "Beignets de légumes enrobés de pâte épicée et frits", allergens: "Sans allergènes majeurs",
+             description: "Beignets de légumes enrobés de pâte épicée et frits",
+             allergens: "Sans allergènes majeurs",
              ingredients: "Légumes assortis (aubergines, oignons, épinards), farine de pois chiches, épices, huile",
              spiceLevel: .medium,
              imageName: "Pakoras"),
@@ -29,7 +30,8 @@ struct ViewModel {
              description: "Galettes de pommes de terre épicées et croustillantes",
              allergens: "Sans allergènes majeurs",
              ingredients: "Pommes de terre, épices, farine de pois chiches",
-             spiceLevel: .medium, imageName: "Aloo")
+             spiceLevel: .medium,
+             imageName: "Aloo")
     ]
     
     // Stocke les plats qui composent le menu du restaurant

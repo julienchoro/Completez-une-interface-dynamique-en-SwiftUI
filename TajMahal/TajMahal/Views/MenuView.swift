@@ -17,22 +17,31 @@ struct MenuView: View {
             
             
             List {
-                
+
                 Section() {
                     
-                    DishView(imageName: viewModel.apetizerArray[0].imageName,
-                             name: viewModel.apetizerArray[0].name,
-                             description: viewModel.apetizerArray[0].description)
+                    ForEach(viewModel.apetizerArray) { item in
+                        DishView(imageName: item.imageName,
+                                 name: item.name,
+                                 description: item.description)
+                    }
                     
                 } header: {
                     Text("Entrées")
                         .font(Font.custom("PlusJakartaSans-Bold", size: 14))
                         .foregroundStyle(.customGrey)
-                } .textCase(.none)
+                }
+                    .textCase(.none)
+                    
                 
                 
                 Section() {
                     
+                    ForEach(viewModel.mainCourseArray) { item in
+                        DishView(imageName: item.imageName,
+                                 name: item.name,
+                                 description: item.description)
+                    }
                     
                 } header: {
                     Text("Plats Principaux")
@@ -42,10 +51,11 @@ struct MenuView: View {
                 
                 
                 
-                
                     .listRowSeparator(.hidden)
             }
             .navigationTitle("Menu")
+            .listRowSpacing(12)
+
             
             
         }
