@@ -31,7 +31,7 @@ struct WelcomeView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 335)
                     .scaledToFill()
-                    .padding()
+                    .padding(.horizontal)
                 
 //MARK: Name and logo
                 HStack {
