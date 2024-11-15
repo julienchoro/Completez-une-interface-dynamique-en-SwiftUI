@@ -71,12 +71,12 @@ struct MenuView: View {
                 
                 
                     .listRowSeparator(.hidden)
-                    .ignoresSafeArea(edges: .top)
 
             }
             .listRowSpacing(12)
             
         }
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
