@@ -35,6 +35,7 @@ struct MenuView: View {
                             }
                             .opacity(0.0)
                         }
+                        .listRowInsets(EdgeInsets())
                     }
                     
                 } header: {
@@ -60,6 +61,7 @@ struct MenuView: View {
                             }
                             .opacity(0.0)
                         }
+                        .listRowInsets(EdgeInsets())
                     }
                     
                 } header: {
@@ -147,7 +149,7 @@ struct DishView: View {
                 }
             }
         }
-        .frame(width: 335, height: 82)
+        .padding()
     }
 }
 
