@@ -41,6 +41,7 @@ struct DishDetailView: View {
                         }
                         .padding()
                     }
+                    .listRowSeparator(.hidden, edges: .top)
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Ingrédients:")
@@ -51,13 +52,16 @@ struct DishDetailView: View {
                             .font(Font.custom("PlusJakartaSans-Regular", size: 14))
                             .foregroundColor(.customGrey)
                     }
+                    .listRowSeparator(.hidden, edges: .bottom)
                     .padding()
                 }
                 .listRowInsets(EdgeInsets())
 
             }
-            .frame(width: .infinity)
             .listStyle(.plain)
+            .frame(maxWidth: .infinity)
+//            .scrollContentBackground(.hidden)
+//            .listStyle(.plain)
 
             
         }
