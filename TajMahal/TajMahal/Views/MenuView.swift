@@ -15,24 +15,26 @@ struct MenuView: View {
     let viewModel: ViewModel = ViewModel()
     
     var body: some View {
+
         NavigationStack {
-            
-            
+
             List {
                 
                 Section() {
                     
                     ForEach(viewModel.apetizerArray) { item in
-                        
-                        NavigationLink(destination: DishDetailView(dish: item)) {
-                            
-                            DishView(imageName: item.imageName,
-                                     name: item.name,
-                                     description: item.description,
-                                     price: item.price,
-                                     spiceLevel: item.spiceLevel)
+                        ZStack {
+                                
+                                DishView(imageName: item.imageName,
+                                         name: item.name,
+                                         description: item.description,
+                                         price: item.price,
+                                         spiceLevel: item.spiceLevel)
+                            NavigationLink(destination: DishDetailView(dish: item)) {
+                                EmptyView()
+                            }
+                            .opacity(0.0)
                         }
-                        
                     }
                     
                 } header: {
@@ -42,20 +44,21 @@ struct MenuView: View {
                 }
                 .textCase(.none)
                 
-                
-                
+
                 Section() {
                     
                     ForEach(viewModel.mainCourseArray) { item in
-                        
-                        NavigationLink(destination: DishDetailView(dish: item)) {
-                            
-                            DishView(imageName: item.imageName,
-                                     name: item.name,
-                                     description: item.description,
-                                     price: item.price,
-                                     spiceLevel: item.spiceLevel)
-
+                        ZStack {
+                                
+                                DishView(imageName: item.imageName,
+                                         name: item.name,
+                                         description: item.description,
+                                         price: item.price,
+                                         spiceLevel: item.spiceLevel)
+                            NavigationLink(destination: DishDetailView(dish: item)) {
+                                EmptyView()
+                            }
+                            .opacity(0.0)
                         }
                     }
                     
@@ -68,10 +71,10 @@ struct MenuView: View {
                 
                 
                     .listRowSeparator(.hidden)
+                    .ignoresSafeArea(edges: .top)
+
             }
             .listRowSpacing(12)
-            
-            
             
         }
         .navigationBarBackButtonHidden(true)
@@ -91,6 +94,8 @@ struct MenuView: View {
             
             ToolbarItem(placement: .principal) {
                 Text("Menu")
+                    .font(Font.custom("PlusJakartaSans-Bold", size: 18))
+                    .foregroundStyle(.customBlack)
             }
         }
     }
