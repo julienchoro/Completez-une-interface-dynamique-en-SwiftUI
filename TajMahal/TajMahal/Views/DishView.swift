@@ -27,21 +27,19 @@ struct DishView: View {
                 
                 VStack (alignment: .leading) {
                     Text(dish.name)
-                        .font(.custom("PlusJakartaSans-Semibold", size: 14))
-                        .foregroundStyle(.customGrey)
+                        .customText(weight: "SemiBold", fontSize: 14, color: .customGrey)
                     
                     Spacer()
                     
                     Text(dish.description)
-                        .font(.custom("PlusJakartaSans-Regular", size: 12))
-                        .foregroundStyle(.customGrey)
+                        .customText(weight: "Regular", fontSize: 12, color: .customGrey)
                     
                     Spacer()
                     
                     HStack {
                         Text((String(format: "%.2f €", dish.price)))
-                            .font(.custom("PlusJakartaSans-Regular", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "Regular", fontSize: 12, color: .customGrey)
+
                         Spacer()
 
                         SpiceView(spiceLevel: dish.spiceLevel)

@@ -32,12 +32,11 @@ struct DishDetailView: View {
                         
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Allergènes:")
-                                .font(Font.custom("PlusJakartaSans-SemiBold", size: 14))
-                                .foregroundStyle(.customGrey)
+                                .customText(weight: "SemiBold", fontSize: 14, color: .customGrey)
                             
                             Text(dish.ingredients)
-                                .font(Font.custom("PlusJakartaSans-Regular", size: 14))
-                                .foregroundColor(.customGrey)
+                                .customText(weight: "Regular", fontSize: 14, color: .customGrey)
+
                         }
                         .padding()
                     }
@@ -45,12 +44,11 @@ struct DishDetailView: View {
                     
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Ingrédients:")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 14))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 14, color: .customGrey)
                         
                         Text(dish.allergens)
-                            .font(Font.custom("PlusJakartaSans-Regular", size: 14))
-                            .foregroundColor(.customGrey)
+                            .customText(weight: "Regular", fontSize: 14, color: .customGrey)
+
                     }
                     .listRowSeparator(.hidden, edges: .bottom)
                     .padding()
@@ -74,7 +72,8 @@ struct DishDetailView: View {
                     HStack {
                         Image(systemName: "chevron.left")
                         Text(dish.name)
-                            .font(Font.custom("PlusJakartaSans-Bold", size: 18))
+                            .customText(weight: "Bold", fontSize: 18, color: .customBlack)
+
                     }
                     .foregroundStyle(.customBlack)
                 }

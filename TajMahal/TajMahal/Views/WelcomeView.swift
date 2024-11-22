@@ -37,12 +37,11 @@ struct WelcomeView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Restaurant Indien")
-                            .font(Font.custom("PlusJakartaSans-Regular", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "Regular", fontSize: 12, color: .customGrey)
+
                         Spacer()
                         Text("Taj Mahal")
-                            .font(Font.custom("PlusJakartaSans-Bold", size: 18))
-                            .foregroundStyle(.customBlack)
+                            .customText(weight: "Bold", fontSize: 18, color: .customBlack)
                             .font(.title)
                     }
                     Spacer()
@@ -63,11 +62,11 @@ struct WelcomeView: View {
                             .frame(width: 12, height: 12)
                             .tint(.customGrey)
                         Text("Mardi")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
+
                         Spacer()
-                        Text("11h30 - 14h30 • 18h30 - 22h00")                    .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                        Text("11h30 - 14h30 • 18h30 - 22h00")
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                     }
                     
@@ -78,13 +77,11 @@ struct WelcomeView: View {
                             .frame(width: 14, height: 12)
                             .tint(.customGrey)
                         
-                        Text("Type de Service")                    .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                        Text("Type de Service")                                                .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                         Spacer()
                         Text("À emporter")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                     }
                     
@@ -96,8 +93,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text("12 Avenue de la Brique - 75010 Paris")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                         Spacer()
                     }
@@ -110,8 +106,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text(verbatim:"www.tajmahal.fr")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                         Spacer()
                     }
@@ -124,8 +119,7 @@ struct WelcomeView: View {
                             .tint(.customGrey)
                         
                         Text("06 12 34 56 78")
-                            .font(Font.custom("PlusJakartaSans-SemiBold", size: 12))
-                            .foregroundStyle(.customGrey)
+                            .customText(weight: "SemiBold", fontSize: 12, color: .customGrey)
                         
                         Spacer()
                     }
@@ -139,9 +133,7 @@ struct WelcomeView: View {
                     MenuView()
                 } label : {
                     Text("Acceder au menu")
-                        .font(Font.custom("PlusJakartaSans-Bold", size: 16))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .customText(weight: "Bold", fontSize: 16, color: .white)
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(.customRed)

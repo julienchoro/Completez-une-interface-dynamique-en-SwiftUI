@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		428D2B512AFA851900BBA4F5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D2B502AFA851900BBA4F5 /* Model.swift */; };
-		428D2B532AFA882700BBA4F5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D2B522AFA882700BBA4F5 /* ViewModel.swift */; };
 		42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9DCAD2AF11136007CE7D0 /* TajMahalApp.swift */; };
 		42E9DCB22AF11138007CE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E9DCB12AF11138007CE7D0 /* Assets.xcassets */; };
 		42E9DCB52AF11138007CE7D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E9DCB42AF11138007CE7D0 /* Preview Assets.xcassets */; };
@@ -20,8 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		428D2B502AFA851900BBA4F5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		428D2B522AFA882700BBA4F5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		42E9DCAA2AF11136007CE7D0 /* TajMahal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TajMahal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E9DCAD2AF11136007CE7D0 /* TajMahalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TajMahalApp.swift; sourceTree = "<group>"; };
 		42E9DCB12AF11138007CE7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,6 +31,8 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F93314E82CF0C4BA008AEB89 /* Style */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Style; sourceTree = "<group>"; };
+		F93C55F62CEE6FB500C5BF03 /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
 		F99648D82CE66C9600E378D7 /* Font */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Font; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -69,12 +67,11 @@
 			isa = PBXGroup;
 			children = (
 				42E9DCC02AF11662007CE7D0 /* Info.plist */,
+				F93C55F62CEE6FB500C5BF03 /* Model */,
 				42E9DCBB2AF113D1007CE7D0 /* Views */,
 				42E9DCAD2AF11136007CE7D0 /* TajMahalApp.swift */,
 				42E9DCB12AF11138007CE7D0 /* Assets.xcassets */,
 				42E9DCB32AF11138007CE7D0 /* Preview Content */,
-				428D2B502AFA851900BBA4F5 /* Model.swift */,
-				428D2B522AFA882700BBA4F5 /* ViewModel.swift */,
 				F99648D82CE66C9600E378D7 /* Font */,
 			);
 			path = TajMahal;
@@ -91,6 +88,7 @@
 		42E9DCBB2AF113D1007CE7D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F93314E82CF0C4BA008AEB89 /* Style */,
 				42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */,
 				42E9DCC12AF117AE007CE7D0 /* MenuView.swift */,
 				F99648E52CE6909D00E378D7 /* DishDetailView.swift */,
@@ -116,6 +114,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				F93314E82CF0C4BA008AEB89 /* Style */,
+				F93C55F62CEE6FB500C5BF03 /* Model */,
 				F99648D82CE66C9600E378D7 /* Font */,
 			);
 			name = TajMahal;
@@ -173,14 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428D2B532AFA882700BBA4F5 /* ViewModel.swift in Sources */,
 				F9BAB0F42CE79D2100412DA6 /* SpiceView.swift in Sources */,
 				42E9DCBF2AF11439007CE7D0 /* WelcomeView.swift in Sources */,
 				42E9DCC22AF117AE007CE7D0 /* MenuView.swift in Sources */,
 				F99648E62CE6909D00E378D7 /* DishDetailView.swift in Sources */,
 				42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */,
 				F9BAB0F22CE79CA400412DA6 /* DishView.swift in Sources */,
-				428D2B512AFA851900BBA4F5 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

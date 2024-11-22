@@ -36,8 +36,8 @@ struct MenuView: View {
                     
                 } header: {
                     Text("Entrées")
-                        .font(Font.custom("PlusJakartaSans-Bold", size: 14))
-                        .foregroundStyle(.customGrey)
+                        .customText(weight: "Bold", fontSize: 14, color: .customGrey)
+
                 }
                 .textCase(.none)
                 
@@ -58,8 +58,8 @@ struct MenuView: View {
                     
                 } header: {
                     Text("Plats Principaux")
-                        .font(Font.custom("PlusJakartaSans-Bold", size: 14))
-                        .foregroundStyle(.customGrey)
+                        .customText(weight: "Bold", fontSize: 14, color: .customGrey)
+
                 }
                 .textCase(.none)
                 .listRowSeparator(.hidden)
@@ -85,8 +85,8 @@ struct MenuView: View {
             
             ToolbarItem(placement: .principal) {
                 Text("Menu")
-                    .font(Font.custom("PlusJakartaSans-Bold", size: 18))
-                    .foregroundStyle(.customBlack)
+                    .customText(weight: "Bold", fontSize: 18, color: .customBlack)
+
             }
         }
     }
