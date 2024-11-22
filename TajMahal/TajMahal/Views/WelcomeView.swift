@@ -7,25 +7,15 @@
 
 import SwiftUI
 
-// Page d'accueil
+// Vue principale de la page d'accueil du restaurant
 struct WelcomeView: View {
     
-//    private var test = {
-//        for family in UIFont.familyNames {
-//                 print(family)
-//                 for names in UIFont.fontNames(forFamilyName: family){
-//                 print("== \(names)")
-//                 }
-//            }
-//        return "test"
-//    }
-//    
     var body: some View {
-        
+        // Navigation principale
         NavigationStack {
             ScrollView {
                 
-//MARK: Picture of the view
+                //MARK: Image principale du restaurant
                 Image("TajMahal")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -33,7 +23,7 @@ struct WelcomeView: View {
                     .scaledToFill()
                     .padding(.horizontal)
                 
-//MARK: Name and logo
+                //MARK: En-tête avec nom du restaurant et logo
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Restaurant Indien")
@@ -53,7 +43,7 @@ struct WelcomeView: View {
                 .frame(height: 40)
                 .padding()
                 
-//MARK: Informations
+                //MARK: Section des informations pratiques
                 VStack(spacing: 10) {
                     HStack {
                         Image("Horaire")
@@ -128,7 +118,7 @@ struct WelcomeView: View {
                 
                 Spacer()
                 
-//MARK: Navigation link button
+                //MARK: Bouton d'accès au menu
                 NavigationLink {
                     MenuView()
                 } label : {

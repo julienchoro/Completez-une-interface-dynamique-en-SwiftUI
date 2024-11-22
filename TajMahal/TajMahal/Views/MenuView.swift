@@ -7,25 +7,27 @@
 
 import SwiftUI
 
-// Menu sous forme de liste
+// Vue affichant le menu du restaurant sous forme de liste
 struct MenuView: View {
+    // Permet de revenir à la vue précédente
     @Environment(\.dismiss) private var dismiss
 
-    // Référence vers le view model qui permet d'accéder aux tableaux d'entrées et de plats du menu
+    // ViewModel contenant les données du menu
     let viewModel: ViewModel = ViewModel()
     
     var body: some View {
 
         NavigationStack {
-
+            // Liste des plats organisée en sections
             List {
-                
+                // Section des entrées
                 Section() {
                     
                     ForEach(viewModel.apetizerArray) { item in
                         ZStack {
-                                
+                            // Vue personnalisée pour chaque plat
                             DishView(dish: item)
+                            // Navigation vers le détail du plat
                             NavigationLink(destination: DishDetailView(dish: item)) {
                                 EmptyView()
                             }
@@ -41,13 +43,14 @@ struct MenuView: View {
                 }
                 .textCase(.none)
                 
-
+                // Section des plats principaux
                 Section() {
                     
                     ForEach(viewModel.mainCourseArray) { item in
                         ZStack {
-                                
+                            // Vue personnalisée pour chaque plat
                             DishView(dish: item)
+                            // Navigation vers le détail du plat
                             NavigationLink(destination: DishDetailView(dish: item)) {
                                 EmptyView()
                             }
@@ -68,13 +71,16 @@ struct MenuView: View {
             .listRowSpacing(12)
             
         }
+        // Configuration de la barre de navigation
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            // Bouton retour personnalisé
             ToolbarItem(placement: .topBarLeading) {
                 Button {
                     dismiss()
                 } label: {
+                    // ... configuration du bouton ...
                     HStack {
                         Image(systemName: "chevron.left")
                             .font(Font.custom("PlusJakartaSans-Bold", size: 18))
@@ -82,7 +88,7 @@ struct MenuView: View {
                     .foregroundStyle(.customBlack)
                 }
             }
-            
+            // Titre de la page
             ToolbarItem(placement: .principal) {
                 Text("Menu")
                     .customText(weight: "Bold", fontSize: 18, color: .customBlack)

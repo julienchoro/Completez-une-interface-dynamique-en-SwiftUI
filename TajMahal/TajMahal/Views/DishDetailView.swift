@@ -7,21 +7,27 @@
 
 import SwiftUI
 
+// Vue de détail d'un plat spécifique
 struct DishDetailView: View {
+    // Fermeture de la vue
     @Environment(\.dismiss) private var dismiss
+    // Plat à afficher
     var dish: Dish
     
     var body: some View {
         NavigationStack {
             List {
                 Group {
+                    // Section image et niveau d'épices
                     VStack(alignment: .leading) {
                         ZStack (alignment: .topTrailing) {
+                            // Image du plat
                             Image(dish.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(14)
                                 .padding()
+                            // Indicateur du niveau d'épices
                             SpiceView(spiceLevel: dish.spiceLevel)
                                 .padding(6)
                                 .background(Color.white)
@@ -29,7 +35,7 @@ struct DishDetailView: View {
                                 .padding(30)
                         
                         }
-                        
+                        // Section allergènes
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Allergènes:")
                                 .customText(weight: "SemiBold", fontSize: 14, color: .customGrey)
@@ -42,6 +48,7 @@ struct DishDetailView: View {
                     }
                     .listRowSeparator(.hidden, edges: .top)
                     
+                    // Section ingrédients
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Ingrédients:")
                             .customText(weight: "SemiBold", fontSize: 14, color: .customGrey)
@@ -58,13 +65,13 @@ struct DishDetailView: View {
             }
             .listStyle(.plain)
             .frame(maxWidth: .infinity)
-//            .scrollContentBackground(.hidden)
-//            .listStyle(.plain)
 
             
         }
+        // Configuration de la barre de navigation
         .navigationBarBackButtonHidden(true)
         .toolbar {
+            // Bouton retour personnalisé
             ToolbarItem(placement: .topBarLeading) {
                 Button {
                     dismiss()
